@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="{% static 'token_app/file.js' %}"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand">Welcome!</a>
+
+      <!-- Add a "hamburger". Remember to add jQuery and JavaScript CDNs -->
+      <!-- at the bottom of the body section for this to work -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Add a link to the Signup page -->
+      {% if token_index %}
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link">Your Session Ends in: </a><a id='countdown'></a>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      {% endif %}
+    </nav>
+    <title>Token Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+
+  </body>
+</html>
