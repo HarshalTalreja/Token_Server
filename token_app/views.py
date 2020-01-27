@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
-from background_task import background
 from .models import Token
 import secrets, random
 from django.utils import timezone
