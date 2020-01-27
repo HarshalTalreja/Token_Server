@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'background_task',
     'token_app',
     'django.contrib.admin',
     'django.contrib.auth',

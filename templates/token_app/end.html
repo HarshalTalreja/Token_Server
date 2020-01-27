@@ -1,4 +1,5 @@
 {% extends 'token_app/base.html' %}
 {% block content %}
   <h1>Hi your session ended.</h1>
+  <p><a class="nav-item nav-link" href="{% url 'token_app_index'%}" role="button">Start New Session</a></p>
 {% endblock content %}

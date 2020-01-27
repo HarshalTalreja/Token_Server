@@ -6,7 +6,7 @@ import secrets, random
 from django.utils import timezone
 
 def create(request):
-    pool_capacity = 10
+    pool_capacity = 5
     my_dict = {'pool': pool_capacity}
     Token.objects.all().delete()
     for i in range(pool_capacity):
@@ -32,7 +32,7 @@ def delete(request, token_key):
     Token.objects.filter(key=token_key).delete()
     Token(key=secrets.token_hex()).save()
     return render(request, 'token_app/delete.html',context={'token':token_key})
-    
+
 def end(request, token_key):
     token_end = Token.objects.filter(key=token_key).first()
     token_end.state='Free'

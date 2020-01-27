@@ -1,7 +1,7 @@
 {% extends 'token_app/base.html' %}
 {% block content %}
-  <h4>Your Token is : {{ token_index }}</h2>
+  <h4 align = 'center'>Your Token is :</h4><h4 align='center'>{{ token_index }}</h4>
   <p><a align='center' id='aliveButton' class="nav-item nav-link" href="#" role="button">Keep Alive</a></p>
-  <p><a align='center' id='endButton' class="nav-item nav-link" href="{% url 'end' token_key=token_index %}" role="button">End Session!</a></p>
-  <p><a align='center' id='deleteButton' class="nav-item nav-link" href="{% url 'delete' token_key=token_index %}" role="button">Delete Token!</a></p>
+  <p><a align='center' id='endButton' class="nav-item nav-link " href="{% url 'end' token_key=token_index %}" role="button">End Session!</a></p>
+  <p><a align='center' id='deleteButton' class="nav-item nav-link " href="{% url 'delete' token_key=token_index %}" role="button">Delete Token!</a></p>
 {% endblock content %}
