@@ -32,6 +32,7 @@ def delete(request, token_key):
     Token.objects.filter(key=token_key).delete()
     Token(key=secrets.token_hex()).save()
     return render(request, 'token_app/delete.html',context={'token':token_key})
+    
 def end(request, token_key):
     token_end = Token.objects.filter(key=token_key).first()
     token_end.state='Free'
